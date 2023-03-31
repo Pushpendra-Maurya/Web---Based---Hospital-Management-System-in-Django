@@ -1,0 +1,65 @@
+{% extends "navigation.html" %}
+{% block body %}
+
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        margin: 20px;
+        padding-left: 40px;
+
+    }
+
+    
+
+    .text-center {
+        text-align: center;
+        padding-right: 120px;
+        font-weight: bolder;
+        color: violet;
+
+    }
+    .btn{
+        background-color: red;
+        font-size: large;
+        font-weight: bolder;
+        color: wheat;
+
+    }
+    .btn:hover{
+       color: green;
+    }
+</style>
+<div class="container">
+    <h1 class="text-center">View Doctor </h1>
+    <br><br>
+    <table class="table" id="example">
+        <thead>
+            <tr>
+                <th>Doctor ID</th>
+                <th>Doctor Name</th>
+                <th>Doctor Contact</th>
+                <th>Doctor Specialization</th>
+                <th>Doctor Deleted</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+         {% for i in doc %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.special}}</td>
+                <td class="btn"><a href="{%url 'delete_doctor' i.id %}"onclick="return confirm('Are you sure')">Delete </a></td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}

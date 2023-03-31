@@ -1,0 +1,65 @@
+{% extends "navigation.html" %}
+{% block body %}
+
+
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .box{
+        margin: 10px;
+        margin-left: 10px;
+        width:20% ;
+        height: 30vh;
+        height: auto;
+        background-color: cadetblue;;
+        border-radius: 10px;
+        text-align: center;
+    }
+    p{
+        color: red;
+    }
+    label{
+        color: blue;
+        font-weight: bolder;
+
+    }
+</style>
+<div class="container">
+    <div class="box">
+       <label>Call</label>
+       <p>+91-7388006830</p>
+    </div>
+    <div class="box">
+        <label>Gmail</label>
+        <p>gmail.com</p>
+    </div>
+    <div class="box">
+        <label>Website</label>
+        <p>www.hospital.com</p>
+    </div>
+    <div class="box">
+        <label>Instagram</label>
+        <p>www.instgram.com</p>
+    </div>
+    <div class="box">
+        <label>Facebook</label>
+        <p>www.facebook.com</p>
+    </div>
+    <div class="box">
+    <label>Linkdin</label>
+    <p>www.linkdin.com</p>
+    </div>
+    <div class="box">
+        <label>Github</label>
+        <p>www.github.com</p>
+    </div>
+
+</div>
+
+{% endblock %}

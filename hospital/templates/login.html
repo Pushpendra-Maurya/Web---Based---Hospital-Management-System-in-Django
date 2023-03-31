@@ -1,0 +1,94 @@
+{% extends "navigation.html" %}
+{% block body %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<style>
+    .container-class{
+        background-color: rgb(28, 180, 207);
+        width: 34%;
+        height: 56vh;
+        margin: auto;
+        margin-left: 300px;
+        margin-top: 100px;
+        border-radius: 20px;
+        border-start-end-radius: 10px;
+  
+    }
+    label{
+        text-align: center;
+        color: rgb(3, 3, 3);
+        font-weight: bolder;
+        margin-top: 10px;
+    }
+.form-control{
+    width: 100%;
+    height: 6vh;
+    background-color: sandybrown;
+}
+
+#submitted{
+    color: black;
+    border-radius: 10px;
+    border-color: blue;
+    width: 150px;
+    margin-left: 53px;
+    margin-top: 49px;
+    background: red;
+}
+#submitted:hover{
+    background-color: green;
+
+}
+.text{
+    text-align: center;
+    font-weight: lighter;
+    font-weight: bolder;
+    font-size: 30px;
+    color: blue;
+}
+</style>
+{% ifequal error "no" %}
+<script>
+    alert('Logged In Successfully');
+    
+   
+</script>
+
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid  Login Credintials, Try again');
+</script>
+
+{% endifequal %}
+
+
+
+<div class="container-class">
+    <h2 class="text">Admin Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Admin Name</label>
+        <input type="text" class="form-control" name="username"><br>
+        <label>Password</label>
+        <input type="text" class="form-control" name="password">
+        <br>
+        <input type="submit" value="login" class="form-control" id="submitted">
+
+    </form>
+</div>
+<body>
+     
+</body>
+</html>
+{% endblock %}
